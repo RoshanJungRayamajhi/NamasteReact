@@ -1,8 +1,19 @@
-# React + Vite
+# NetflixGPT
+- create react appp
+- configure tailwind css
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Features
+ - Login signup page
+   - Sign in/signUP form
+   - Redirect to the browser 
+ - browser(after authentication)
+    - Header
+    - Main movie
+          - Tailer in background
+            - Title & Description
+           -MovieSuggestions 
+            - Movies List*n
+-Netflix GPT
+   - search bar for movies
+   - Movies suggestions
+              
