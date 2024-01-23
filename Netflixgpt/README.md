@@ -10,10 +10,10 @@
     - Header
     - Main movie
           - Tailer in background
-            - Title & Description
-           -MovieSuggestions 
-            - Movies List*n
--Netflix GPT
+          - Title & Description
+          - MovieSuggestions 
+          - Movies List *n
+- Netflix GPT
    - search bar for movies
    - Movies suggestions
               
