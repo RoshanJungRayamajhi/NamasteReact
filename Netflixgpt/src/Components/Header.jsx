@@ -1,10 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { checkvalidatedata } from "../utilis/validation";
 import {auth} from "../utilis/firebase"
-import {  createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {  createUserWithEmailAndPassword,onAuthStateChanged,signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { adduser } from "../utilis/userSlice";
+import { adduser, removeuser } from "../utilis/userSlice";
+import { ImgUrl,UserPhoto } from "../utilis/constant";
 
 const Header = () => {
 
@@ -20,6 +21,25 @@ const Header = () => {
   const togglehandler = () => {
     setisSigninform(!isSigninform);
   };
+  useEffect(()=>{
+   const unsubscribe= onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/auth.user
+        const {uid,email,displayName,photoURL} = user;
+        dispatch(adduser({ uid:uid, email:email,displayName:displayName,photoURL:photoURL}))
+         navigate("/browse")
+        // ...
+      } else {
+        dispatch(removeuser())
+       navigate("/")
+        // User is signed out
+        // ...
+      }
+    });
+    return ()=>unsubscribe();
+    
+  },[])
   
   const validationhandler = () => {
     
@@ -38,14 +58,13 @@ const Header = () => {
     // Signed up 
     const user = userCredential.user;
     updateProfile(auth.currentUser, {
-      displayName: name.current.value, photoURL: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      displayName: name.current.value, photoURL:UserPhoto
     }).then(() => {
       const {uid,email,displayName,photoURL} = auth.currentUser;
         dispatch(adduser({ uid:uid, email:email,displayName:displayName,photoURL:photoURL}))
       
       // Profile updated!
       // ...
-      navigate("/browse")
     }).catch((error) => {
       setErrormessage(error.message)
       // An error occurred
@@ -64,7 +83,8 @@ const Header = () => {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-       navigate("/browse")
+      
+        // ...
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -84,7 +104,7 @@ const Header = () => {
       <div className=" w-full h-screen absolute">
         <div className=" bg-[#000000] opacity-[75%] bg-gradient-to-b from-black absolute w-full h-screen "></div>
         <img
-          src="https://1000logos.net/wp-content/uploads/2017/05/Netflix-Logo.png"
+          src={ImgUrl}
           alt="netflix logo"
           className=" absolute w-24 sm:w-40 m-4"
         ></img>
