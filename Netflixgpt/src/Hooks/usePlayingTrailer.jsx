@@ -16,7 +16,7 @@ export const usePlayingTrailer = (movieId)=>{
   console.log(json);
   const tailer = json.results.filter(
     (video, i) =>
-      video.type === "Trailer" && video.name === "Official Trailer"
+      video.type === "Trailer"
   );
   const filtertailer = tailer ? tailer[0] : json.results[0];
    dispatch(addtailer(filtertailer))

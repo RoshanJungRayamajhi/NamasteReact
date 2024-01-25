@@ -29,6 +29,7 @@
    - Fetch Data for Trailers Video
    - Update Store with Trailer Data
    - Embedded the youtube video and make it auto play and muted
+   - Making Second Container and apply them and show their respective titles with their moviesname
 
 
 

@@ -12,6 +12,7 @@ const Browseheader = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
    const user =  useSelector(store=>store.user)
+   console.log("mainheader")
     // console.log(user)
 
   const handlesinout = ()=>{
@@ -41,7 +42,7 @@ const Browseheader = () => {
   },[])
   return (
     <>
-   <div className='absolute z-[99999] w-full h-[15vh] bg-gradient-to-b from-black flex items-center justify-between p-4 overflow-hidden'>
+   <div className='absolute top-0 left-0 w-full h-[15vh] bg-gradient-to-b from-black flex items-center justify-between p-4 overflow-hidden'>
       <img
         src={ImgUrl}
         alt="netflix logo"

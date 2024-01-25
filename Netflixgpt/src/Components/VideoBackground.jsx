@@ -16,8 +16,18 @@ const VideoBackground = ({ movieId }) => {
 
    
   return (
-    <div className=" w-screen h-[100vh] overflow-y-auto overflow-x-hidden">
-      <iframe  className="w-screen aspect-video " src={"https://www.youtube.com/embed/"+key+"?si=igl2eT-Fb2gD6e2b"+"?&autoplay=1&mute=1"} title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+    <div className=" aspect-video overflow-y-hidden overflow-x-hidden ">
+     {/* <iframe className="w-screen h-full aspect-video pointer-events-none " src={`https://www.youtube.com/embed/${key}?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1`} title="YouTube video player"></iframe> */}
+     <iframe 
+  className="aspect-video w-full pointer-events-none mt-[-9%]" 
+  src={`https://www.youtube.com/embed/${key}?playlist=${key}&mute=1&controls=0&modestbranding=1&autoplay=1&loop=1`} 
+  title="YouTube video player"
+  allow="autoplay; encrypted-media"
+  allowFullScreen
+/>
+
+
+
     </div>
   );
 };
