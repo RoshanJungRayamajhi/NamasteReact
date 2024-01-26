@@ -30,6 +30,11 @@
    - Update Store with Trailer Data
    - Embedded the youtube video and make it auto play and muted
    - Making Second Container and apply them and show their respective titles with their moviesname
+   - GPT search features
+   - Gpt search page
+   - Gpt search bar
+   - Added multilungal features
+  - Integrate GPT API
 
 
 
