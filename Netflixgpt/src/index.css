@@ -2,3 +2,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .scroll::-webkit-scrollbar{
+    display: none;
+  }
