@@ -11,7 +11,7 @@ const Header = () => {
   const onlinestatus=useOnlinestatus();
   const {loggedInuser} = useContext(userContext);
   const cartItems = useSelector((store)=>store.cart.items)
-  console.log(cartItems)
+ =
   
   return (
     <div className=' w-full h-[20vh] flex items-center justify-between px-20'>

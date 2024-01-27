@@ -11,7 +11,7 @@ const Cart = () => {
    dispatch(clearItems());
  }
   const cartItems1 = useSelector((store)=>store.cart.items)
-  console.log(cartItems1)
+ 
   return (
     <div className=' max-w-screen-md mx-auto text-center'>
       <h1 className=' text-3xl '> Cart</h1>

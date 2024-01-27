@@ -17,7 +17,7 @@ const Resturantmenu = () => {
      const json =await data.json();
      setrestinfo(json.data);
     }
-    // console.log(restinfo)
+   
     
     if(!restinfo){
         return <Shimmer/>
@@ -25,9 +25,8 @@ const Resturantmenu = () => {
     const {name,areaName, cuisines}=restinfo?.cards[0]?.card?.card?.info;
 
     const {itemCards} = restinfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
-    // console.log(restinfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
     const catogery = restinfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c,i)=>c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"    )
-    // console.log(catogery)
+    
   return (<>
   {restinfo ? ( 
      <div className='text-center'>
