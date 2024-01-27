@@ -34,7 +34,15 @@
    - Gpt search page
    - Gpt search bar
    - Added multilungal features
-  - Integrate GPT API
+   - Integrate GPT API
+   - Gpt api call
+   - fetch movies suggestion from gpt and search from tmdb api
+   - show them in gpt page
+   - Reused movie list and moviescard commonent while rendering suggested movies
+   - Add .env file in the vite using the VITE_REACT_APP
+   - Add .env file to the git ignore for the privacy of the keys
+   - Memoization features to minimize the api calls
+   - Site responsive features
 
 
 

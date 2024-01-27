@@ -9,7 +9,6 @@ import { usePlayingTrailer } from "../Hooks/usePlayingTrailer";
 const VideoBackground = ({ movieId }) => {
 
    const key =useSelector((store)=>store.movies?.tailervideo?.key)
-   console.log(key)
 
    usePlayingTrailer(movieId)
  

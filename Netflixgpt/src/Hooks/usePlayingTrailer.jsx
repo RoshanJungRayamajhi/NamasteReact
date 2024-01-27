@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS } from "../utilis/constant";
 import { addtailer } from "../utilis/movieSlice";
 import { useEffect } from "react";
@@ -6,6 +6,7 @@ import { useEffect } from "react";
 
 
 export const usePlayingTrailer = (movieId)=>{
+  const playingtrailer = useSelector(store=>store.movies.tailervideo)
     const dispatch = useDispatch();
    const getmovievideo = async () => {
   const data = await fetch(
@@ -13,7 +14,6 @@ export const usePlayingTrailer = (movieId)=>{
     API_OPTIONS
   );
   const json = await data.json();
-  console.log(json);
   const tailer = json.results.filter(
     (video, i) =>
       video.type === "Trailer"
@@ -24,6 +24,6 @@ export const usePlayingTrailer = (movieId)=>{
 
 };
 useEffect(() => {
-  getmovievideo();
+ !playingtrailer && getmovievideo();
 }, []);
 }

@@ -109,7 +109,7 @@ const Header = () => {
           className=" absolute w-24 sm:w-40 m-4"
         ></img>
       </div>
-        <div className=" p-[2.8%] w-[30vw] h-[60vh] bg-black opacity-80 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
+        <div className=" p-[2.8%] w-[70vw] md:w-[30vw] h-fit md:h-[60vh] bg-black opacity-80 absolute top-[40%] md:top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
           <form className=" flex flex-col" onSubmit={(e)=>e.preventDefault()}>
             <label className="mb-8 text-3xl font-bold text-white">
               {isSigninform ? "Sin In" : "Sin Up"}

@@ -3,13 +3,14 @@ import { IMG_CDN } from '../utilis/constant'
 
 const MovieCards = ({posterpath}) => {
     
-  return (
- <div className=''>
-       <div className=' w-[14vw] h-[30vh] rounded-md'>
-        <img className=' w-full h-full ' src={IMG_CDN + posterpath} alt="MOvieCard" />
-    </div>
-
+  return (<>
+    {posterpath && <><div className=''>
+    <div className='w-[40vw] md:w-[14vw] h-[30vh] rounded-md'>
+     <img className='w-[40vw] md:w-full h-full ' src={IMG_CDN + posterpath} alt="MOvieCard" />
  </div>
+
+</div></>}
+</>
   )
 }
 
